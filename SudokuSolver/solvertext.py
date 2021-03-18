@@ -41,4 +41,3 @@ def find_empty(bo):
         for j in range(len(bo[0])):
             if bo[i][j] == 0:
                 return (i, j) #returns row, column order
-                    
