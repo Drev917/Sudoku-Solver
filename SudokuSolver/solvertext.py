@@ -20,6 +20,22 @@ board = [
         [0, 4, 9, 2, 0, 6, 0, 0, 7]
     ]
 
+def valid(grid, num, pos):
+
+    #check row
+    for i in range (len(grid[0])):
+        if grid[pos[0]][i] == num and pos[1] != i:
+            return False
+
+    #check column
+    for i in range (len(grid[0])):
+        if grid[i][pos[1]] == num and pos[0] != i:
+            return False
+
+    #check position in reference
+    box_x = pos[1] // 3
+    box_y = pos[0] // 3
+
 #draw grid function
 def print_board(grid):
     
