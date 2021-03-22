@@ -54,7 +54,7 @@ def print_board(grid):
 
 print_board(board)
 
-#loops board and finds null value and returns to call
+#loops through board and finds null value and returns to call
 def find_empty(grid):
     for i in range(len(grid)):
         for j in range(len(grid[0])):
