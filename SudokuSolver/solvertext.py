@@ -32,7 +32,7 @@ def valid(grid, num, pos):
         if grid[i][pos[1]] == num and pos[0] != i:
             return False
 
-    #check position in box
+    #check position in reference
     box_x = pos[1] // 3
     box_y = pos[0] // 3
 
