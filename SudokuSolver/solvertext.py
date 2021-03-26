@@ -42,7 +42,9 @@ def valid(grid, num, pos):
         if grid[i][pos[1]] == num and pos[0] != i:
             return False
 
-    # check position in box
+
+
+    #check position in reference
     box_x = pos[1] // 3
     box_y = pos[0] // 3
 
@@ -71,7 +73,7 @@ def print_board(grid):
 
 print_board(board)
 
-# loops board and finds null value and returns to call
+#loops through board and finds null value and returns to call
 def find_empty(grid):
     for i in range(len(grid)):
         for j in range(len(grid[0])):
