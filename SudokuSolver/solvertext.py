@@ -20,6 +20,16 @@ board = [
         [0, 4, 9, 2, 0, 6, 0, 0, 7]
     ]
 
+# base case of recursion
+def solve(grid):
+
+    find = find_empty(grid)
+    if not find:
+        return True
+    else:
+        row, col = find
+
+
 def valid(grid, num, pos):
 
     # check row
@@ -35,6 +45,13 @@ def valid(grid, num, pos):
     # check position in box
     box_x = pos[1] // 3
     box_y = pos[0] // 3
+
+    # loop through box
+    for i in range(box_y * 3, box_y*3 + 3):
+        for j in range(box_x * 3, box_x*3 + 3):
+            if grid[i][j] == num and (i,j) != pos:
+                return False
+    return True
 
 # draw grid function
 def print_board(grid):
@@ -60,3 +77,4 @@ def find_empty(grid):
         for j in range(len(grid[0])):
             if grid[i][j] == 0:
                 return (i, j) #returns row, column order
+    return None
